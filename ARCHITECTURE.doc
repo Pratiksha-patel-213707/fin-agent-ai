@@ -2,15 +2,15 @@ Architecture Diagram
 
 
 
-The flow starts with the Orchestrator Agent, which manages the pipeline and routes data step by step.
+The flow starts with theï¿½Orchestrator Agent, which manages the pipeline and routes data step by step.
 Then:
-1. Ingestion Agent loads and checks the raw files.
-2. Mapper Agent maps accounts to the COA and uses the LLM only for ambiguous mappings.
-3. Manual Adjustments Agent validates journal entries with deterministic accounting checks.
-4. FX Translation Agent applies exchange rates.
-5. Statement Builder Agent generates the financial statements.
-6. Validator Agent runs reconciliation and integrity checks.
-7. Audit Trail and Reporting Agent produces the final reports and traceability logs.
+1. Ingestion Agentï¿½loads and checks the raw files.
+2. Mapper Agentï¿½maps accounts to the COA and uses the LLM only for ambiguous mappings.
+3. Manual Adjustments Agentï¿½validates journal entries with deterministic accounting checks.
+4. FX Translation Agentï¿½applies exchange rates.
+5. Statement Builder Agentï¿½generates the financial statements.
+6. Validator Agentï¿½runs reconciliation and integrity checks.
+7. Audit Trail and Reporting Agentï¿½produces the final reports and traceability logs.
 
 ## Design Summary
 
