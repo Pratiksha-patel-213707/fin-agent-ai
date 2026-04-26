@@ -1,0 +1,161 @@
+========================================================================
+  MANUAL ADJUSTMENTS VALIDATION REPORT
+  Period: 2024-Q4   |   Run ID: 9a3a2079-710f-4a2e-81ed-8ebd3bd92f58
+========================================================================
+
+EXECUTIVE SUMMARY
+----------------------------------------
+For the current period, six out of ten manual journal entries have passed validation, while four require immediate attention. Specifically, JE-002 and ADJ-008 are invalid due to debit/credit mismatches. Additionally, JE-005 and ADJ-009 failed validation because they contain unknown account codes. These four entries must be corrected and re-submitted for validation to ensure an accurate and timely period close.
+
+TOTALS
+  Total entries reviewed : 10
+  ✅ Valid (ready to post): 6
+  ⚠️  Needs review        : 0
+  ❌ Invalid (blocked)    : 4
+
+────────────────────────────────────────────────────────────────────────
+✅  JE-001  |  OTHER
+   Accrue Q4 bonus pool
+   Prepared by: Finance team — bonus accrual workbook v3  |  Date: 2024-12-31
+
+   Lines:
+     6100  Bonus accrual                       Dr   850,000.00                     USD
+     2120  Accrual offset                                         Cr   850,000.00  USD
+   ──────────────────────────────────────────────────
+   TOTAL                                          Dr   850,000.00  Cr   850,000.00
+
+────────────────────────────────────────────────────────────────────────
+❌  JE-002  |  OTHER
+   Reclassify marketing spend wrongly booked to T&E
+   Prepared by: Controller note 2024-12-28  |  Date: 2024-12-28
+
+   Lines:
+     6300  Move from T&E                       Dr    28,500.00                     USD
+     6310  Reverse from T&E                                       Cr    25,000.00  USD
+   ──────────────────────────────────────────────────
+   TOTAL                                          Dr    28,500.00  Cr    25,000.00
+
+   ISSUES DETECTED:
+   ❌ [DEBIT_CREDIT_MISMATCH]  BLOCKING
+      This entry does not balance. Total debits are 28,500.00 and total credits are 25,000.00, leaving a difference of 3,500.00.
+      → Action: Review entry lines and correct the imbalance before posting.
+
+────────────────────────────────────────────────────────────────────────
+✅  JE-003  |  OTHER
+   FX revaluation of EUR cash balance to period-end rate
+   Prepared by: FX reval calc  |  Date: 2024-12-31
+
+   Lines:
+     1110  EUR cash uplift                     Dr    11,200.00                     USD
+     7310  Unrealized FX gain                                     Cr    11,200.00  USD
+   ──────────────────────────────────────────────────
+   TOTAL                                          Dr    11,200.00  Cr    11,200.00
+
+────────────────────────────────────────────────────────────────────────
+✅  JE-004  |  OTHER
+   Bad debt provision top-up
+   Prepared by: AR aging review  |  Date: 2024-12-31
+
+   Lines:
+     6600  Top-up reserve                      Dr    45,000.00                     USD
+     1121  Increase allowance                                     Cr    45,000.00  USD
+   ──────────────────────────────────────────────────
+   TOTAL                                          Dr    45,000.00  Cr    45,000.00
+
+────────────────────────────────────────────────────────────────────────
+❌  JE-005  |  OTHER
+   Reclass conference travel from old code
+   Prepared by: AP team  |  Date: 2024-12-15
+
+   Lines:
+     6315  Conf travel                         Dr    18,500.00                     USD
+     6310  Out of T&E                                             Cr    18,500.00  USD
+   ──────────────────────────────────────────────────
+   TOTAL                                          Dr    18,500.00  Cr    18,500.00
+
+   ISSUES DETECTED:
+   ❌ [UNKNOWN_ACCOUNT_CODE]  BLOCKING
+      This entry uses account 6315, but that code is not in the chart of accounts.
+      → Action: Verify account code. If it's a new account, add it to the COA first. If it's a typo, correct the account code.
+
+────────────────────────────────────────────────────────────────────────
+✅  JE-006  |  OTHER
+   Depreciation catch-up — Q4
+   Prepared by: Fixed asset register  |  Date: 2024-12-31
+
+   Lines:
+     6500  Q4 dep                              Dr   215,000.00                     USD
+     1211  Accum dep                                              Cr   215,000.00  USD
+   ──────────────────────────────────────────────────
+   TOTAL                                          Dr   215,000.00  Cr   215,000.00
+
+────────────────────────────────────────────────────────────────────────
+✅  JE-007  |  OTHER
+   Deferred tax true-up
+   Prepared by: Tax provision memo  |  Date: 2024-12-31
+
+   Lines:
+     8200  DTA reduction                       Dr    38,000.00                     USD
+     1250  Reduce DTA                                             Cr    38,000.00  USD
+   ──────────────────────────────────────────────────
+   TOTAL                                          Dr    38,000.00  Cr    38,000.00
+
+────────────────────────────────────────────────────────────────────────
+❌  ADJ-008  |  OTHER
+   Intercompany settlement — UK sub
+   Prepared by: IC reconciliation  |  Date: 2024-12-30
+
+   Lines:
+     2170  IC payable down                     Dr    22,500.00                     USD
+     2170  IC payable up                                          Cr    22,000.00  USD
+   ──────────────────────────────────────────────────
+   TOTAL                                          Dr    22,500.00  Cr    22,000.00
+
+   ISSUES DETECTED:
+   ❌ [DEBIT_CREDIT_MISMATCH]  BLOCKING
+      The total amount entered as debits ($22,500.00) does not match the total amount entered as credits ($22,000.00) in this journal entry. In accounting, every journal entry must have total debits equal to total credits for the accounting equation to remain in balance. Currently, your debits are $500.00 higher than your credits.
+      → Action: You need to adjust one of the lines so that the total debits equal the total credits. Please review the underlying documentation for this intercompany settlement to determine the correct amount. You should either: 1) Increase the credit to account 2170 ('IC payable up') by $500.00 (from $22,000.00 to $22,500.00), OR 2) Decrease the debit to account 2170 ('IC payable down') by $500.00 (from $22,500.00 to $22,000.00).
+
+────────────────────────────────────────────────────────────────────────
+❌  ADJ-009  |  OTHER
+   Accrue legal fees for ongoing litigation
+   Prepared by: Legal memo dated 2024-12-29  |  Date: 2024-12-31
+
+   Lines:
+     9999  Legal accrual                       Dr    75,000.00                     USD
+     2120  Accrued legal                                          Cr    75,000.00  USD
+   ──────────────────────────────────────────────────
+   TOTAL                                          Dr    75,000.00  Cr    75,000.00
+
+   ISSUES DETECTED:
+   ❌ [UNKNOWN_ACCOUNT_CODE]  BLOCKING
+      The journal entry is trying to use account '9999' named 'Legal accrual' for a $75,000 debit, but this account code does not exist in our system's Chart of Accounts. The system doesn't know where to post this amount.
+      → Action: Please review the journal entry for account '9999'. If this is a new account that should be added to the Chart of Accounts, please initiate the request to add it. Otherwise, please correct '9999' to the appropriate existing legal expense account (e.g., typically a 6xxx expense account) in the journal entry for the $75,000 debit.
+
+────────────────────────────────────────────────────────────────────────
+✅  ADJ-010  |  OTHER
+   Reverse intercompany balance
+   Prepared by: IC reconciliation  |  Date: 2024-12-31
+
+   Lines:
+     1150  IC receivable from UK               Dr   150,000.00                     USD
+     2170  IC payable to UK                                       Cr   150,000.00  USD
+   ──────────────────────────────────────────────────
+   TOTAL                                          Dr   150,000.00  Cr   150,000.00
+
+========================================================================
+AUDIT TRAIL SUMMARY
+----------------------------------------
+  [2026-04-26T12:20:17.315546+00:00] JE-001: Entry JE-001 ('Accrue Q4 bonus pool') validated. Status: VALID. Issues found: 0. Blocking errors: 0.
+  [2026-04-26T12:20:23.050616+00:00] JE-002: Entry JE-002 ('Reclassify marketing spend wrongly booked to T&E') validated. Status: INVALID. Issues found: 1. Blocking errors: 1.
+  [2026-04-26T12:20:23.050883+00:00] JE-003: Entry JE-003 ('FX revaluation of EUR cash balance to period-end rate') validated. Status: VALID. Issues found: 0. Blocking errors: 0.
+  [2026-04-26T12:20:23.051056+00:00] JE-004: Entry JE-004 ('Bad debt provision top-up') validated. Status: VALID. Issues found: 0. Blocking errors: 0.
+  [2026-04-26T12:20:28.800403+00:00] JE-005: Entry JE-005 ('Reclass conference travel from old code') validated. Status: INVALID. Issues found: 1. Blocking errors: 1.
+  [2026-04-26T12:20:28.800713+00:00] JE-006: Entry JE-006 ('Depreciation catch-up — Q4') validated. Status: VALID. Issues found: 0. Blocking errors: 0.
+  [2026-04-26T12:20:28.800992+00:00] JE-007: Entry JE-007 ('Deferred tax true-up') validated. Status: VALID. Issues found: 0. Blocking errors: 0.
+  [2026-04-26T12:20:34.741575+00:00] ADJ-008: Entry ADJ-008 ('Intercompany settlement — UK sub') validated. Status: INVALID. Issues found: 1. Blocking errors: 1.
+  [2026-04-26T12:20:38.261501+00:00] ADJ-009: Entry ADJ-009 ('Accrue legal fees for ongoing litigation') validated. Status: INVALID. Issues found: 1. Blocking errors: 1.
+  [2026-04-26T12:20:38.261923+00:00] ADJ-010: Entry ADJ-010 ('Reverse intercompany balance') validated. Status: VALID. Issues found: 0. Blocking errors: 0.
+
+END OF REPORT
+========================================================================

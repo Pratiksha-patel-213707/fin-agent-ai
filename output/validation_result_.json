@@ -1,0 +1,635 @@
+{
+  "run_id": "52df0565-61a8-45eb-9baf-eaff92cd7dff",
+  "period": "",
+  "total_entries": 10,
+  "valid_count": 6,
+  "invalid_count": 4,
+  "needs_review_count": 0,
+  "entries": [
+    {
+      "entry_id": "JE-001",
+      "description": "Accrue Q4 bonus pool",
+      "adj_type": "other",
+      "date": "2024-12-31",
+      "period": "",
+      "prepared_by": "",
+      "lines": [
+        {
+          "account_code": "6100",
+          "account_name": "Bonus accrual",
+          "debit": "850000.0",
+          "credit": "0.0",
+          "currency": "USD",
+          "counterparty": null
+        },
+        {
+          "account_code": "2120",
+          "account_name": "Accrual offset",
+          "debit": "0.0",
+          "credit": "850000.0",
+          "currency": "USD",
+          "counterparty": null
+        }
+      ],
+      "intercompany_ref": null,
+      "status": "VALID",
+      "issues": [],
+      "audit_trail": [
+        {
+          "entry_id": "9e3ddf51-d020-49d3-bce1-c7c88d86ea71",
+          "source_type": "manual_adjustment_validation",
+          "source_ref": "JE-001",
+          "account_code": "6100,2120",
+          "field_affected": "status",
+          "value_before": null,
+          "value_after": null,
+          "delta": null,
+          "narrative": "Entry JE-001 ('Accrue Q4 bonus pool') validated. Status: VALID. Issues found: 0. Blocking errors: 0.",
+          "agent": "ManualAdjustmentsAgent",
+          "timestamp": "2026-04-26T12:17:31.418740+00:00"
+        }
+      ]
+    },
+    {
+      "entry_id": "JE-002",
+      "description": "Reclassify marketing spend wrongly booked to T&E",
+      "adj_type": "other",
+      "date": "2024-12-28",
+      "period": "",
+      "prepared_by": "",
+      "lines": [
+        {
+          "account_code": "6300",
+          "account_name": "Move from T&E",
+          "debit": "28500.0",
+          "credit": "0.0",
+          "currency": "USD",
+          "counterparty": null
+        },
+        {
+          "account_code": "6310",
+          "account_name": "Reverse from T&E",
+          "debit": "0.0",
+          "credit": "25000.0",
+          "currency": "USD",
+          "counterparty": null
+        }
+      ],
+      "intercompany_ref": null,
+      "status": "INVALID",
+      "issues": [
+        {
+          "issue_id": "e7ddecbc-d4fe-40ab-9da2-c062244ba6e1",
+          "severity": "ERROR",
+          "code": "DEBIT_CREDIT_MISMATCH",
+          "entry_ref": "JE-002",
+          "field_ref": "",
+          "description": "Entry JE-002: debits=28500.00, credits=25000.00, difference=3500.00",
+          "plain_english": "This entry does not balance. Total debits are 28,500.00 and total credits are 25,000.00, leaving a difference of 3,500.00.",
+          "suggested_action": "Review entry lines and correct the imbalance before posting.",
+          "blocking": true,
+          "requires_human": true
+        }
+      ],
+      "audit_trail": [
+        {
+          "entry_id": "0e880bea-afcf-4562-844d-a2629c84ab68",
+          "source_type": "manual_adjustment_validation",
+          "source_ref": "JE-002",
+          "account_code": "6300,6310",
+          "field_affected": "status",
+          "value_before": null,
+          "value_after": null,
+          "delta": null,
+          "narrative": "Entry JE-002 ('Reclassify marketing spend wrongly booked to T&E') validated. Status: INVALID. Issues found: 1. Blocking errors: 1.",
+          "agent": "ManualAdjustmentsAgent",
+          "timestamp": "2026-04-26T12:17:38.975441+00:00"
+        }
+      ]
+    },
+    {
+      "entry_id": "JE-003",
+      "description": "FX revaluation of EUR cash balance to period-end rate",
+      "adj_type": "other",
+      "date": "2024-12-31",
+      "period": "",
+      "prepared_by": "",
+      "lines": [
+        {
+          "account_code": "1110",
+          "account_name": "EUR cash uplift",
+          "debit": "11200.0",
+          "credit": "0.0",
+          "currency": "USD",
+          "counterparty": null
+        },
+        {
+          "account_code": "7310",
+          "account_name": "Unrealized FX gain",
+          "debit": "0.0",
+          "credit": "11200.0",
+          "currency": "USD",
+          "counterparty": null
+        }
+      ],
+      "intercompany_ref": null,
+      "status": "VALID",
+      "issues": [],
+      "audit_trail": [
+        {
+          "entry_id": "3fb77252-f12a-4211-891f-7ef04b11a7f8",
+          "source_type": "manual_adjustment_validation",
+          "source_ref": "JE-003",
+          "account_code": "1110,7310",
+          "field_affected": "status",
+          "value_before": null,
+          "value_after": null,
+          "delta": null,
+          "narrative": "Entry JE-003 ('FX revaluation of EUR cash balance to period-end rate') validated. Status: VALID. Issues found: 0. Blocking errors: 0.",
+          "agent": "ManualAdjustmentsAgent",
+          "timestamp": "2026-04-26T12:17:38.975614+00:00"
+        }
+      ]
+    },
+    {
+      "entry_id": "JE-004",
+      "description": "Bad debt provision top-up",
+      "adj_type": "other",
+      "date": "2024-12-31",
+      "period": "",
+      "prepared_by": "",
+      "lines": [
+        {
+          "account_code": "6600",
+          "account_name": "Top-up reserve",
+          "debit": "45000.0",
+          "credit": "0.0",
+          "currency": "USD",
+          "counterparty": null
+        },
+        {
+          "account_code": "1121",
+          "account_name": "Increase allowance",
+          "debit": "0.0",
+          "credit": "45000.0",
+          "currency": "USD",
+          "counterparty": null
+        }
+      ],
+      "intercompany_ref": null,
+      "status": "VALID",
+      "issues": [],
+      "audit_trail": [
+        {
+          "entry_id": "0980c7df-5e45-4cd8-a8f9-ed4a60674386",
+          "source_type": "manual_adjustment_validation",
+          "source_ref": "JE-004",
+          "account_code": "6600,1121",
+          "field_affected": "status",
+          "value_before": null,
+          "value_after": null,
+          "delta": null,
+          "narrative": "Entry JE-004 ('Bad debt provision top-up') validated. Status: VALID. Issues found: 0. Blocking errors: 0.",
+          "agent": "ManualAdjustmentsAgent",
+          "timestamp": "2026-04-26T12:17:38.975741+00:00"
+        }
+      ]
+    },
+    {
+      "entry_id": "JE-005",
+      "description": "Reclass conference travel from old code",
+      "adj_type": "other",
+      "date": "2024-12-15",
+      "period": "",
+      "prepared_by": "",
+      "lines": [
+        {
+          "account_code": "6315",
+          "account_name": "Conf travel",
+          "debit": "18500.0",
+          "credit": "0.0",
+          "currency": "USD",
+          "counterparty": null
+        },
+        {
+          "account_code": "6310",
+          "account_name": "Out of T&E",
+          "debit": "0.0",
+          "credit": "18500.0",
+          "currency": "USD",
+          "counterparty": null
+        }
+      ],
+      "intercompany_ref": null,
+      "status": "INVALID",
+      "issues": [
+        {
+          "issue_id": "65a40cb5-a214-42e8-a4d6-302856d461d8",
+          "severity": "ERROR",
+          "code": "UNKNOWN_ACCOUNT_CODE",
+          "entry_ref": "JE-005",
+          "field_ref": "account_code=6315",
+          "description": "Entry JE-005, line account 6315 ('Conf travel') does not exist in chart of accounts.",
+          "plain_english": "The account code '6315' with the description 'Conf travel', which is used for the $18,500.0 debit in this journal entry, is not recognized by our accounting system. This means it doesn't exist in our official Chart of Accounts.",
+          "suggested_action": "Please verify the correct account code that should be used for 'Conf travel'. If '6315' is a new account that needs to be created, please follow the procedure to add it to the Chart of Accounts first. If this is a typo and a different existing account should have been used, correct the account code from '6315' to the accurate one in the debit line for $18,500.0.",
+          "blocking": true,
+          "requires_human": true
+        }
+      ],
+      "audit_trail": [
+        {
+          "entry_id": "a67aff19-f990-4fd1-a8a0-388a1848fca4",
+          "source_type": "manual_adjustment_validation",
+          "source_ref": "JE-005",
+          "account_code": "6315,6310",
+          "field_affected": "status",
+          "value_before": null,
+          "value_after": null,
+          "delta": null,
+          "narrative": "Entry JE-005 ('Reclass conference travel from old code') validated. Status: INVALID. Issues found: 1. Blocking errors: 1.",
+          "agent": "ManualAdjustmentsAgent",
+          "timestamp": "2026-04-26T12:17:43.811050+00:00"
+        }
+      ]
+    },
+    {
+      "entry_id": "JE-006",
+      "description": "Depreciation catch-up \u2014 Q4",
+      "adj_type": "other",
+      "date": "2024-12-31",
+      "period": "",
+      "prepared_by": "",
+      "lines": [
+        {
+          "account_code": "6500",
+          "account_name": "Q4 dep",
+          "debit": "215000.0",
+          "credit": "0.0",
+          "currency": "USD",
+          "counterparty": null
+        },
+        {
+          "account_code": "1211",
+          "account_name": "Accum dep",
+          "debit": "0.0",
+          "credit": "215000.0",
+          "currency": "USD",
+          "counterparty": null
+        }
+      ],
+      "intercompany_ref": null,
+      "status": "VALID",
+      "issues": [],
+      "audit_trail": [
+        {
+          "entry_id": "ee937c89-e19a-49b6-830b-15eb69882c4e",
+          "source_type": "manual_adjustment_validation",
+          "source_ref": "JE-006",
+          "account_code": "6500,1211",
+          "field_affected": "status",
+          "value_before": null,
+          "value_after": null,
+          "delta": null,
+          "narrative": "Entry JE-006 ('Depreciation catch-up \u2014 Q4') validated. Status: VALID. Issues found: 0. Blocking errors: 0.",
+          "agent": "ManualAdjustmentsAgent",
+          "timestamp": "2026-04-26T12:17:43.811483+00:00"
+        }
+      ]
+    },
+    {
+      "entry_id": "JE-007",
+      "description": "Deferred tax true-up",
+      "adj_type": "other",
+      "date": "2024-12-31",
+      "period": "",
+      "prepared_by": "",
+      "lines": [
+        {
+          "account_code": "8200",
+          "account_name": "DTA reduction",
+          "debit": "38000.0",
+          "credit": "0.0",
+          "currency": "USD",
+          "counterparty": null
+        },
+        {
+          "account_code": "1250",
+          "account_name": "Reduce DTA",
+          "debit": "0.0",
+          "credit": "38000.0",
+          "currency": "USD",
+          "counterparty": null
+        }
+      ],
+      "intercompany_ref": null,
+      "status": "VALID",
+      "issues": [],
+      "audit_trail": [
+        {
+          "entry_id": "55638efb-6afc-4d31-a4ea-d78c32178b13",
+          "source_type": "manual_adjustment_validation",
+          "source_ref": "JE-007",
+          "account_code": "8200,1250",
+          "field_affected": "status",
+          "value_before": null,
+          "value_after": null,
+          "delta": null,
+          "narrative": "Entry JE-007 ('Deferred tax true-up') validated. Status: VALID. Issues found: 0. Blocking errors: 0.",
+          "agent": "ManualAdjustmentsAgent",
+          "timestamp": "2026-04-26T12:17:43.811720+00:00"
+        }
+      ]
+    },
+    {
+      "entry_id": "ADJ-008",
+      "description": "Intercompany settlement \u2014 UK sub",
+      "adj_type": "other",
+      "date": "2024-12-30",
+      "period": "",
+      "prepared_by": "",
+      "lines": [
+        {
+          "account_code": "2170",
+          "account_name": "IC payable down",
+          "debit": "22500.0",
+          "credit": "0.0",
+          "currency": "USD",
+          "counterparty": null
+        },
+        {
+          "account_code": "2170",
+          "account_name": "IC payable up",
+          "debit": "0.0",
+          "credit": "22000.0",
+          "currency": "USD",
+          "counterparty": null
+        }
+      ],
+      "intercompany_ref": null,
+      "status": "INVALID",
+      "issues": [
+        {
+          "issue_id": "b85ebacd-15d8-4071-8f4b-ce6c67c9e76b",
+          "severity": "ERROR",
+          "code": "DEBIT_CREDIT_MISMATCH",
+          "entry_ref": "ADJ-008",
+          "field_ref": "",
+          "description": "Entry ADJ-008: debits=22500.00, credits=22000.00, difference=500.00",
+          "plain_english": "This entry does not balance. Total debits are 22,500.00 and total credits are 22,000.00, leaving a difference of 500.00.",
+          "suggested_action": "Review entry lines and correct the imbalance before posting.",
+          "blocking": true,
+          "requires_human": true
+        }
+      ],
+      "audit_trail": [
+        {
+          "entry_id": "d285101b-279c-4ded-8a8a-1126b7cd895f",
+          "source_type": "manual_adjustment_validation",
+          "source_ref": "ADJ-008",
+          "account_code": "2170,2170",
+          "field_affected": "status",
+          "value_before": null,
+          "value_after": null,
+          "delta": null,
+          "narrative": "Entry ADJ-008 ('Intercompany settlement \u2014 UK sub') validated. Status: INVALID. Issues found: 1. Blocking errors: 1.",
+          "agent": "ManualAdjustmentsAgent",
+          "timestamp": "2026-04-26T12:17:49.518952+00:00"
+        }
+      ]
+    },
+    {
+      "entry_id": "ADJ-009",
+      "description": "Accrue legal fees for ongoing litigation",
+      "adj_type": "other",
+      "date": "2024-12-31",
+      "period": "",
+      "prepared_by": "",
+      "lines": [
+        {
+          "account_code": "9999",
+          "account_name": "Legal accrual",
+          "debit": "75000.0",
+          "credit": "0.0",
+          "currency": "USD",
+          "counterparty": null
+        },
+        {
+          "account_code": "2120",
+          "account_name": "Accrued legal",
+          "debit": "0.0",
+          "credit": "75000.0",
+          "currency": "USD",
+          "counterparty": null
+        }
+      ],
+      "intercompany_ref": null,
+      "status": "INVALID",
+      "issues": [
+        {
+          "issue_id": "7bbd01c4-6620-40b2-a8af-4cbb183d5858",
+          "severity": "ERROR",
+          "code": "UNKNOWN_ACCOUNT_CODE",
+          "entry_ref": "ADJ-009",
+          "field_ref": "account_code=9999",
+          "description": "Entry ADJ-009, line account 9999 ('Legal accrual') does not exist in chart of accounts.",
+          "plain_english": "The account '9999 - Legal accrual' used on the debit side of this journal entry is not recognized in our system's Chart of Accounts. This typically happens when an incorrect account code is entered or a new account has not yet been set up.",
+          "suggested_action": "Please verify the account code '9999'. If this is a new expense account for legal fees that needs to be created, please follow the process to add it to the Chart of Accounts first. If it's a typo, please correct the account '9999' on the debit line to the correct legal expense account (e.g., an existing legal fees expense account).",
+          "blocking": true,
+          "requires_human": true
+        }
+      ],
+      "audit_trail": [
+        {
+          "entry_id": "03e91565-5995-4b89-834c-22560e345c1d",
+          "source_type": "manual_adjustment_validation",
+          "source_ref": "ADJ-009",
+          "account_code": "9999,2120",
+          "field_affected": "status",
+          "value_before": null,
+          "value_after": null,
+          "delta": null,
+          "narrative": "Entry ADJ-009 ('Accrue legal fees for ongoing litigation') validated. Status: INVALID. Issues found: 1. Blocking errors: 1.",
+          "agent": "ManualAdjustmentsAgent",
+          "timestamp": "2026-04-26T12:17:53.168357+00:00"
+        }
+      ]
+    },
+    {
+      "entry_id": "ADJ-010",
+      "description": "Reverse intercompany balance",
+      "adj_type": "other",
+      "date": "2024-12-31",
+      "period": "",
+      "prepared_by": "",
+      "lines": [
+        {
+          "account_code": "1150",
+          "account_name": "IC receivable from UK",
+          "debit": "150000.0",
+          "credit": "0.0",
+          "currency": "USD",
+          "counterparty": null
+        },
+        {
+          "account_code": "2170",
+          "account_name": "IC payable to UK",
+          "debit": "0.0",
+          "credit": "150000.0",
+          "currency": "USD",
+          "counterparty": null
+        }
+      ],
+      "intercompany_ref": "ADJ-010",
+      "status": "VALID",
+      "issues": [],
+      "audit_trail": [
+        {
+          "entry_id": "ede7d093-aa8f-4305-91fb-40c4465a0f5b",
+          "source_type": "manual_adjustment_validation",
+          "source_ref": "ADJ-010",
+          "account_code": "1150,2170",
+          "field_affected": "status",
+          "value_before": null,
+          "value_after": null,
+          "delta": null,
+          "narrative": "Entry ADJ-010 ('Reverse intercompany balance') validated. Status: VALID. Issues found: 0. Blocking errors: 0.",
+          "agent": "ManualAdjustmentsAgent",
+          "timestamp": "2026-04-26T12:17:53.168633+00:00"
+        }
+      ]
+    }
+  ],
+  "audit_trail": [
+    {
+      "entry_id": "9e3ddf51-d020-49d3-bce1-c7c88d86ea71",
+      "source_type": "manual_adjustment_validation",
+      "source_ref": "JE-001",
+      "account_code": "6100,2120",
+      "field_affected": "status",
+      "value_before": null,
+      "value_after": null,
+      "delta": null,
+      "narrative": "Entry JE-001 ('Accrue Q4 bonus pool') validated. Status: VALID. Issues found: 0. Blocking errors: 0.",
+      "agent": "ManualAdjustmentsAgent",
+      "timestamp": "2026-04-26T12:17:31.418740+00:00"
+    },
+    {
+      "entry_id": "0e880bea-afcf-4562-844d-a2629c84ab68",
+      "source_type": "manual_adjustment_validation",
+      "source_ref": "JE-002",
+      "account_code": "6300,6310",
+      "field_affected": "status",
+      "value_before": null,
+      "value_after": null,
+      "delta": null,
+      "narrative": "Entry JE-002 ('Reclassify marketing spend wrongly booked to T&E') validated. Status: INVALID. Issues found: 1. Blocking errors: 1.",
+      "agent": "ManualAdjustmentsAgent",
+      "timestamp": "2026-04-26T12:17:38.975441+00:00"
+    },
+    {
+      "entry_id": "3fb77252-f12a-4211-891f-7ef04b11a7f8",
+      "source_type": "manual_adjustment_validation",
+      "source_ref": "JE-003",
+      "account_code": "1110,7310",
+      "field_affected": "status",
+      "value_before": null,
+      "value_after": null,
+      "delta": null,
+      "narrative": "Entry JE-003 ('FX revaluation of EUR cash balance to period-end rate') validated. Status: VALID. Issues found: 0. Blocking errors: 0.",
+      "agent": "ManualAdjustmentsAgent",
+      "timestamp": "2026-04-26T12:17:38.975614+00:00"
+    },
+    {
+      "entry_id": "0980c7df-5e45-4cd8-a8f9-ed4a60674386",
+      "source_type": "manual_adjustment_validation",
+      "source_ref": "JE-004",
+      "account_code": "6600,1121",
+      "field_affected": "status",
+      "value_before": null,
+      "value_after": null,
+      "delta": null,
+      "narrative": "Entry JE-004 ('Bad debt provision top-up') validated. Status: VALID. Issues found: 0. Blocking errors: 0.",
+      "agent": "ManualAdjustmentsAgent",
+      "timestamp": "2026-04-26T12:17:38.975741+00:00"
+    },
+    {
+      "entry_id": "a67aff19-f990-4fd1-a8a0-388a1848fca4",
+      "source_type": "manual_adjustment_validation",
+      "source_ref": "JE-005",
+      "account_code": "6315,6310",
+      "field_affected": "status",
+      "value_before": null,
+      "value_after": null,
+      "delta": null,
+      "narrative": "Entry JE-005 ('Reclass conference travel from old code') validated. Status: INVALID. Issues found: 1. Blocking errors: 1.",
+      "agent": "ManualAdjustmentsAgent",
+      "timestamp": "2026-04-26T12:17:43.811050+00:00"
+    },
+    {
+      "entry_id": "ee937c89-e19a-49b6-830b-15eb69882c4e",
+      "source_type": "manual_adjustment_validation",
+      "source_ref": "JE-006",
+      "account_code": "6500,1211",
+      "field_affected": "status",
+      "value_before": null,
+      "value_after": null,
+      "delta": null,
+      "narrative": "Entry JE-006 ('Depreciation catch-up \u2014 Q4') validated. Status: VALID. Issues found: 0. Blocking errors: 0.",
+      "agent": "ManualAdjustmentsAgent",
+      "timestamp": "2026-04-26T12:17:43.811483+00:00"
+    },
+    {
+      "entry_id": "55638efb-6afc-4d31-a4ea-d78c32178b13",
+      "source_type": "manual_adjustment_validation",
+      "source_ref": "JE-007",
+      "account_code": "8200,1250",
+      "field_affected": "status",
+      "value_before": null,
+      "value_after": null,
+      "delta": null,
+      "narrative": "Entry JE-007 ('Deferred tax true-up') validated. Status: VALID. Issues found: 0. Blocking errors: 0.",
+      "agent": "ManualAdjustmentsAgent",
+      "timestamp": "2026-04-26T12:17:43.811720+00:00"
+    },
+    {
+      "entry_id": "d285101b-279c-4ded-8a8a-1126b7cd895f",
+      "source_type": "manual_adjustment_validation",
+      "source_ref": "ADJ-008",
+      "account_code": "2170,2170",
+      "field_affected": "status",
+      "value_before": null,
+      "value_after": null,
+      "delta": null,
+      "narrative": "Entry ADJ-008 ('Intercompany settlement \u2014 UK sub') validated. Status: INVALID. Issues found: 1. Blocking errors: 1.",
+      "agent": "ManualAdjustmentsAgent",
+      "timestamp": "2026-04-26T12:17:49.518952+00:00"
+    },
+    {
+      "entry_id": "03e91565-5995-4b89-834c-22560e345c1d",
+      "source_type": "manual_adjustment_validation",
+      "source_ref": "ADJ-009",
+      "account_code": "9999,2120",
+      "field_affected": "status",
+      "value_before": null,
+      "value_after": null,
+      "delta": null,
+      "narrative": "Entry ADJ-009 ('Accrue legal fees for ongoing litigation') validated. Status: INVALID. Issues found: 1. Blocking errors: 1.",
+      "agent": "ManualAdjustmentsAgent",
+      "timestamp": "2026-04-26T12:17:53.168357+00:00"
+    },
+    {
+      "entry_id": "ede7d093-aa8f-4305-91fb-40c4465a0f5b",
+      "source_type": "manual_adjustment_validation",
+      "source_ref": "ADJ-010",
+      "account_code": "1150,2170",
+      "field_affected": "status",
+      "value_before": null,
+      "value_after": null,
+      "delta": null,
+      "narrative": "Entry ADJ-010 ('Reverse intercompany balance') validated. Status: VALID. Issues found: 0. Blocking errors: 0.",
+      "agent": "ManualAdjustmentsAgent",
+      "timestamp": "2026-04-26T12:17:53.168633+00:00"
+    }
+  ],
+  "summary_plain_english": "Out of 10 manual journal entries validated for the period, 6 entries passed, but 4 require immediate attention. Entries JE-002 and ADJ-008 have debit/credit mismatches, while JE-005 and ADJ-009 refer to unknown account codes. These four invalid entries must be corrected by the respective owners and re"
+}

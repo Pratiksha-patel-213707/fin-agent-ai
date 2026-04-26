@@ -1,0 +1,30 @@
+Architecture Diagram
+
+
+
+The flow starts with the Orchestrator Agent, which manages the pipeline and routes data step by step.
+Then:
+1. Ingestion Agent loads and checks the raw files.
+2. Mapper Agent maps accounts to the COA and uses the LLM only for ambiguous mappings.
+3. Manual Adjustments Agent validates journal entries with deterministic accounting checks.
+4. FX Translation Agent applies exchange rates.
+5. Statement Builder Agent generates the financial statements.
+6. Validator Agent runs reconciliation and integrity checks.
+7. Audit Trail and Reporting Agent produces the final reports and traceability logs.
+
+## Design Summary
+
+This architecture treats financial statement generation as a controlled workflow rather than a single prompt. The system is split into specialized agents so that accounting-critical steps remain deterministic, traceable, and easy to validate.
+
+Deterministic agents handle ingestion, validation, FX translation, statement building, reconciliation, and reporting. LLM usage is intentionally narrow and limited to tasks where semantic reasoning helps: account-mapping disambiguation and plain-English explanations for finance users.
+
+This keeps the system audit-friendly. If a number appears on a financial statement, it should come from deterministic logic and source data, not from model inference. When ambiguity remains, the system escalates to human review instead of guessing.
+
+## Key Architecture Choice
+
+The key design choice is the boundary between deterministic processing and LLM-assisted reasoning:
+
+- Use deterministic code for arithmetic, validation, reconciliation, FX logic, and statement generation.
+- Use the LLM only for semantic classification and user-facing explanations.
+- Route ambiguous or low-confidence cases into a human review queue.
+
